@@ -1,8 +1,11 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/editor",
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./theme/default/js": "./src/theme/default/index.ts",
+    "./theme/default/css": "./src/theme/default/index.css",
+    "./editor": "./src/editor.tsx",
     "./*": "./src/*.tsx"
   },
   "scripts": {
@@ -11,6 +14,7 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
+    "@lexical/react": "^0.32.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "^2.5.0",
@@ -18,10 +22,15 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "eslint": "^9.28.0",
+    "lexical": "^0.32.1",
     "typescript": "5.8.2"
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "peerDependencies": {
+    "@lexical/react": "^0.32.1",
+    "lexical": "^0.32.1"
   }
 }

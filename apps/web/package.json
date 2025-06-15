@@ -1,5 +1,5 @@
 {
-  "name": "apps-web",
+  "name": "@repo/apps-web",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,6 +9,7 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@repo/editor": "workspace:*",
     "@react-router/node": "^7.5.3",
     "@react-router/serve": "^7.5.3",
     "isbot": "^5.1.27",
