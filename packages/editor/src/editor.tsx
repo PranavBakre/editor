@@ -4,15 +4,18 @@ import {
 } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
+import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { EditorThemeClasses, LexicalEditor } from "lexical";
-import { useMemo } from "react";
+import { ReactElement, ReactNode, useMemo } from "react";
+import { InternalNodes } from "./nodes/internal";
 
 export interface EditorProps {
-  children: React.ReactNode;
+  children: ReactNode;
   onError: (error: Error, editor: LexicalEditor) => void;
   editable?: boolean;
   theme?: EditorThemeClasses;
+  placeholder?: ((isEditable: boolean) => null | ReactElement) | null | ReactElement
 }
 
 export const Editor = ({
@@ -20,6 +23,7 @@ export const Editor = ({
   onError,
   editable = true,
   theme,
+  placeholder
 }: EditorProps) => {
   const initialConfig = useMemo<InitialConfigType>(() => {
     return {
@@ -27,6 +31,7 @@ export const Editor = ({
       editable,
       onError,
       theme,
+      nodes: InternalNodes
     };
   }, [onError, editable]);
 
@@ -36,7 +41,9 @@ export const Editor = ({
         <RichTextPlugin
           ErrorBoundary={LexicalErrorBoundary}
           contentEditable={<ContentEditable />}
+          placeholder={placeholder}
         />
+        <MarkdownShortcutPlugin />
       </LexicalComposer>
     </div>
   );

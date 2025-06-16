@@ -14,7 +14,11 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
+    "@lexical/code": "^0.32.1",
+    "@lexical/link": "^0.32.1",
+    "@lexical/list": "^0.32.1",
     "@lexical/react": "^0.32.1",
+    "@lexical/rich-text": "^0.32.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "^2.5.0",
@@ -30,7 +34,11 @@
     "react-dom": "^19.1.0"
   },
   "peerDependencies": {
+    "@lexical/code": "^0.32.1",
+    "@lexical/link": "^0.32.1",
+    "@lexical/list": "^0.32.1",
     "@lexical/react": "^0.32.1",
+    "@lexical/rich-text": "^0.32.1",
     "lexical": "^0.32.1"
   }
 }
