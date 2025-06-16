@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import { Editor } from "@repo/editor/editor";
-import "@repo/editor/theme/default/css";
-import { theme } from "@repo/editor/theme/default/js";
+import "@repo/editor/theme/default.css";
+import { theme } from "@repo/editor/theme/default";
 
 export function meta({}: Route.MetaArgs) {
   return [
