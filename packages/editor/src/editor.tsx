@@ -1,13 +1,13 @@
 import {
-  InitialConfigType,
+  type InitialConfigType,
   LexicalComposer,
 } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
-import { EditorThemeClasses, LexicalEditor } from "lexical";
-import { ReactElement, ReactNode, useMemo } from "react";
+import { type EditorThemeClasses, type LexicalEditor } from "lexical";
+import { type ReactElement, type ReactNode, useMemo } from "react";
 import { InternalNodes } from "./nodes/internal";
 
 export interface EditorProps {
@@ -17,9 +17,9 @@ export interface EditorProps {
   theme?: EditorThemeClasses;
   placeholder?: ((isEditable: boolean) => null | ReactElement) | null | ReactElement
 }
+const ContentEditableComponent = ContentEditable as unknown as React.FC<any>;
 
 export const Editor = ({
-  children,
   onError,
   editable = true,
   theme,
@@ -40,7 +40,7 @@ export const Editor = ({
       <LexicalComposer initialConfig={initialConfig}>
         <RichTextPlugin
           ErrorBoundary={LexicalErrorBoundary}
-          contentEditable={<ContentEditable />}
+          contentEditable={<ContentEditableComponent />}
           placeholder={placeholder}
         />
         <MarkdownShortcutPlugin />

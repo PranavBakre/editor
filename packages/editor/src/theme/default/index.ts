@@ -1,4 +1,4 @@
-import { EditorThemeClasses } from 'lexical';
+import type { EditorThemeClasses } from 'lexical';
 
 export const theme: EditorThemeClasses = {
   link: 'link',
