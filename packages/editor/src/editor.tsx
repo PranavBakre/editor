@@ -11,19 +11,22 @@ import { type ReactElement, type ReactNode, useMemo } from "react";
 import { InternalNodes } from "./nodes/internal";
 
 export interface EditorProps {
-  children: ReactNode;
+  children?: ReactNode;
   onError: (error: Error, editor: LexicalEditor) => void;
   editable?: boolean;
   theme?: EditorThemeClasses;
-  placeholder?: ((isEditable: boolean) => null | ReactElement) | null | ReactElement
+  placeholder?:
+    | ((isEditable: boolean) => null | ReactElement)
+    | null
+    | ReactElement;
 }
-const ContentEditableComponent = ContentEditable as unknown as React.FC<any>;
+// const ContentEditableComponent = ContentEditable as unknown as React.FC<any>;
 
 export const Editor = ({
   onError,
   editable = true,
   theme,
-  placeholder
+  placeholder,
 }: EditorProps) => {
   const initialConfig = useMemo<InitialConfigType>(() => {
     return {
@@ -31,7 +34,7 @@ export const Editor = ({
       editable,
       onError,
       theme,
-      nodes: InternalNodes
+      nodes: InternalNodes,
     };
   }, [onError, editable]);
 
@@ -40,8 +43,20 @@ export const Editor = ({
       <LexicalComposer initialConfig={initialConfig}>
         <RichTextPlugin
           ErrorBoundary={LexicalErrorBoundary}
-          contentEditable={<ContentEditableComponent />}
-          placeholder={placeholder}
+          contentEditable={<ContentEditable />}
+          placeholder={(editable) => {
+            console.log(editable)
+            if (editable) {
+              return (
+                <div className="paragraph placeholder">
+                  {typeof placeholder === "function"
+                    ? placeholder(editable)
+                    : placeholder}
+                </div>
+              );
+            }
+            return null;
+          }}
         />
         <MarkdownShortcutPlugin />
       </LexicalComposer>
