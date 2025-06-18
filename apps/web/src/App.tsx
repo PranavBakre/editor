@@ -1,17 +1,7 @@
-import { Editor } from "@repo/editor/editor";
-import { theme } from "@repo/editor/theme/default";
-
-import "@repo/editor/theme/default.css";
 import "./App.css";
-export default function Home() {
-  return (
-    <div>
-      <Editor
-        onError={() => {}}
-        editable={true}
-        theme={theme}
-        placeholder={<div>Enter text</div>}
-      />
-    </div>
-  );
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/router";
+
+export default function App() {
+  return <RouterProvider router={router} />;
 }
