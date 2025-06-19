@@ -6,7 +6,9 @@
     "./theme/default": "./src/theme/default/index.ts",
     "./theme/default.css": "./src/theme/default/index.css",
     "./editor": "./src/editor.tsx",
-    "./*": "./src/*.tsx"
+    "./*": "./src/*.tsx",
+    "./features/*": "./src/features/*.tsx",
+    "./types": "./src/types.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -15,10 +17,13 @@
   },
   "devDependencies": {
     "@lexical/code": "^0.32.1",
+    "@lexical/headless": "^0.32.1",
     "@lexical/link": "^0.32.1",
     "@lexical/list": "^0.32.1",
     "@lexical/react": "^0.32.1",
     "@lexical/rich-text": "^0.32.1",
+    "@lexical/utils": "^0.32.1",
+    "@lexical/yjs": "^0.32.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "^2.5.0",
@@ -27,7 +32,9 @@
     "@types/react-dom": "^19.1.6",
     "eslint": "^9.28.0",
     "lexical": "^0.32.1",
-    "typescript": "5.8.2"
+    "typescript": "5.8.2",
+    "y-websocket": "^3.0.0",
+    "yjs": "^13.6.27"
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -35,10 +42,15 @@
   },
   "peerDependencies": {
     "@lexical/code": "^0.32.1",
+    "@lexical/headless": "^0.32.1",
     "@lexical/link": "^0.32.1",
     "@lexical/list": "^0.32.1",
     "@lexical/react": "^0.32.1",
     "@lexical/rich-text": "^0.32.1",
-    "lexical": "^0.32.1"
+    "@lexical/utils": "^0.32.1",
+    "@lexical/yjs": "^0.32.1",
+    "lexical": "^0.32.1",
+    "y-websocket": "^3.0.0",
+    "yjs": "^13.6.27"
   }
 }

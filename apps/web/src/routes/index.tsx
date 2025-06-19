@@ -4,14 +4,15 @@ import { theme } from "@repo/editor/theme/default";
 import "@repo/editor/theme/default.css";
 
 export default function Home() {
+  
   return (
     <div>
-      <Editor
+      {/* <Editor
         onError={() => {}}
         editable={true}
         theme={theme}
         placeholder={<div>Enter text</div>}
-      />
+      /> */}
     </div>
   );
 }

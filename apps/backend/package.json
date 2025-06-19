@@ -1,0 +1,16 @@
+{
+  "name": "@repo/apps-backend",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "hono": "^4.7.11",
+    "y-durableobjects": "^1.0.4",
+    "yjs": "^13.6.27"
+  },
+  "devDependencies": {
+    "wrangler": "^4.4.0"
+  }
+}
