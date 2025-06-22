@@ -18,7 +18,11 @@
         "YDurableObjects"
       ]
     }
-  ]
+  ],
+  "routes": [{
+    "pattern": "api.editor.psbakre.dev",
+    "custom_domain": true
+  }]
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
