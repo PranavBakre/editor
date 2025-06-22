@@ -1,6 +1,6 @@
-import { FeatureContextType, withFeature } from "../setup";
+import { type FeatureContextType, withFeature } from "../setup";
 import { CollaborationPlugin as LexicalCollaborationPlugin } from "@lexical/react/LexicalCollaborationPlugin";
-import { InitialEditorStateType } from "@lexical/react/LexicalComposer";
+import { type InitialEditorStateType } from "@lexical/react/LexicalComposer";
 
 export { Doc } from "yjs";
 

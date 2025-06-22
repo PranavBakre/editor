@@ -7,24 +7,8 @@ export function createWebsocketProvider(
 ) {
   const doc = getDocFromMap(id, yjsDocMap);
 
-  const provider = new WebsocketProvider('ws://localhost:8787/room', id, doc, {
+  const provider = new WebsocketProvider(import.meta.env.VITE_API_WS_URL, id, doc, {
     connect: false,
-  });
-
-  provider.on("connection-close", (connection) => {
-    console.log("connection-close", connection);
-  });
-
-  provider.on("status", (connection) => {
-    console.log("status", connection);
-  });
-
-  provider.on("connection-error", (connection, error) => {
-    console.log("connection-error", connection, error);
-  });
-
-  provider.on("sync", (connection) => {
-    console.log("synced", connection);
   });
 
   return provider;

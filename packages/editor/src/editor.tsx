@@ -1,6 +1,6 @@
 import {
   type InitialConfigType,
-  InitialEditorStateType,
+  type InitialEditorStateType,
   LexicalComposer,
 } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
@@ -8,7 +8,7 @@ import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
-import { EditorState, type EditorThemeClasses, type LexicalEditor } from "lexical";
+import { type EditorState, type EditorThemeClasses, type LexicalEditor } from "lexical";
 import { type ReactElement, type ReactNode, useMemo } from "react";
 import { InternalNodes } from "./nodes/internal";
 import { CollaborationPlugin } from "./features/collaboration";

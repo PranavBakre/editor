@@ -40,7 +40,6 @@ export const withFeature =
   ) => {
     return function WithFeature(props: Omit<Props, "feature">) {
       const feature = useFeature();
-      console.log(feature, key)
       if (!feature?.[key] || !feature[key].active) {
         return null;
       }

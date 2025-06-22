@@ -32,9 +32,6 @@ export default function Room() {
   return (
       <Editor
         onError={(e) => {console.log(e)}}
-        onChange={(editorState) => {
-          console.log(JSON.stringify(editorState));
-        }}
         editable={true}
         theme={theme}
         placeholder={<div>Enter text</div>}
