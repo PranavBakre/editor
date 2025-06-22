@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# Web Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the web frontend for the collaborative editor, built with React 19, Vite, and TypeScript. It integrates the collaborative editor from `@repo/editor` and supports real-time editing via Yjs.
 
-Currently, two official plugins are available:
+## Features
+- React 19 + Vite + TypeScript
+- Uses `@repo/editor` for collaborative editing
+- Real-time sync via Yjs
+- ESLint, Prettier, and TypeScript for quality
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Scripts
+- `pnpm dev` — start local dev server
+- `pnpm build` — build for production
+- `pnpm lint` — run ESLint
+- `pnpm preview` — preview built app with Wrangler Pages
+- `pnpm deploy` — deploy to Cloudflare Pages
+- `pnpm cf-typegen` — generate/sync types from wrangler config
 
-## Expanding the ESLint configuration
+## Development
+1. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+2. Start dev server:
+   ```sh
+   pnpm dev
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Build & Deploy
+- **Build:**
+  ```sh
+  pnpm build
+  ```
+- **Preview:**
+  ```sh
+  pnpm preview
+  ```
+- **Deploy:**
+  ```sh
+  pnpm deploy
+  ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Type Generation
+To generate or sync Cloudflare Worker types:
+```sh
+pnpm cf-typegen
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Tech Stack
+- React 19, Vite, TypeScript
+- Uses `@repo/editor` for collaborative editing
+- Yjs for real-time sync
