@@ -7,8 +7,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 export function LandingPageForm() {
   const [userName, setUserName] = useState("");
-  const [docName, setDocName] = useState("");
-  const [documentId, setDocumentId] = useState("");
+  const [docNameOrId, setDocNameOrId] = useState("");
   const [error, setError] = useState("");
 
   const [searchParams, setSearchParams] = useSearchParams({ view: "create" });
@@ -17,14 +16,22 @@ export function LandingPageForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!userName.trim() || !docName.trim()) {
+    if (!userName.trim() || !docNameOrId.trim()) {
       setError("Please enter your name and a document name.");
       return;
     }
     setError("");
+    const docName = docNameOrId.trim();
+    let docSlug = docName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+
+    if(view !== "create" && docName.includes("/")){
+      const url = new URL(docName);
+      const pathParts = url.pathname.split('/').filter(part => part);
+      docSlug = pathParts[pathParts.length - 1] || docSlug;
+    }
+    localStorage.setItem("EDITOR_USER_NAME", userName)
     navigate(
-      `/room/${encodeURIComponent(docName)}` +
-        `?name=${encodeURIComponent(userName)}`
+      `/room/${encodeURIComponent(docSlug)}`
     );
   };
   return (
@@ -60,12 +67,12 @@ export function LandingPageForm() {
             htmlFor="docName"
             className="block text-sm font-medium text-stone-300 mb-1"
           >
-            Document Name
+            {view==="create" ? "Document Name": "Document ID or URL"}
           </Label>
           <Input
-            id="docName"
-            value={docName}
-            onChange={(e) => setDocName(e.target.value)}
+            id="docNameOrId"
+            value={docNameOrId}
+            onChange={(e) => setDocNameOrId(e.target.value)}
             placeholder="Enter document name"
             required
           />
@@ -80,6 +87,7 @@ export function LandingPageForm() {
         <div className="flex justify-center">
           <Button
             variant="link"
+            type="button"
             className="text-brand-accent cursor-pointer"
             onClick={() =>
               setSearchParams({ view: view === "create" ? "join" : "create" })
