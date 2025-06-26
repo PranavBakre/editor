@@ -6,8 +6,5 @@
   ],
   "compilerOptions": {
     "types": ["./worker-configuration.d.ts"],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
   }
 }

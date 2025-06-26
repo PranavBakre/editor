@@ -10,7 +10,5 @@ body {
 
 #root {
   margin: 0 auto;
-  margin-top: 2rem;
-  max-width: 75vw;
-  height: 100%
+  height: 100%;
 }
