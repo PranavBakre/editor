@@ -30,12 +30,16 @@ export default function Room() {
   }, [roomId]);
 
   return (
+    <div className="min-h-screen w-screen flex flex-col px-40 pt-24">
       <Editor
         onError={(e) => {console.log(e)}}
         editable={true}
-        theme={theme}
+        editorClasses={theme}
+        colorScheme="theme-sepia-light"
         placeholder={<div>Enter text</div>}
         features={features}
+        className="w-3xl bg-white rounded-lg mx-auto text-black p-20"
       />
+    </div>
   );
 }

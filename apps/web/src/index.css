@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Lora", serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -85,14 +87,14 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --color-brand: #A18042;
-  --color-brand-accent: #C0A062;
+  --color-brand: #a18042;
+  --color-brand-accent: #c0a062;
   --color-brand-hover: #8f713b;
-  
+
   /* Neutral Gray Surface Colors */
   --color-surface-darker: #212121; /* Page BG */
-  --color-surface-dark: #2D2D2D;   /* Card BG */
-  --color-surface-light: #3A3A3A;  /* Input BG */
+  --color-surface-dark: #2d2d2d; /* Card BG */
+  --color-surface-light: #3a3a3a; /* Input BG */
   --color-surface-border: #525252;
 }
 
@@ -102,7 +104,18 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
     background-size: 20px 20px;
   }
+}
+
+.theme-sepia-light {
+  --canvas-color: #212121; /* The dark area AROUND the page */
+}
+.theme-sepia-dark {
+  /* Core Palette */
+  --canvas-color: #1a1918;
 }

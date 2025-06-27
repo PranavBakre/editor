@@ -1,5 +1,191 @@
+/*
+ * ===================================================================
+ *  THEME DEFINITIONS
+ * ===================================================================
+ */
+
+/*
+ * BASE THEME - (Applied once, shared by all themes)
+ * Defines core fonts, brand colors, and the entire typographic scale.
+ * Change these variables to adjust the design system globally.
+ */
+ .theme-base {
+  /* --- Core Fonts --- */
+  --font-family-serif: 'Lora', 'Georgia', serif;
+  --font-family-sans: 'Inter', 'Helvetica Neue', sans-serif;
+
+  /* --- Core Brand Colors (consistent across themes) --- */
+  --accent-color: #A18042;
+  --accent-color-hover: #8f713b;
+  --accent-color-focus: #C0A062;
+
+  /* --- Typographic Scale & Weights --- */
+  /* Body & Paragraphs */
+  --font-size-body: 18px;
+  --font-weight-body: 400;
+  --line-height-body: 2;
+
+  /* Headings */
+  --font-size-h1: 48px;
+  --font-weight-h1: 700;
+  --font-size-h2: 30px;
+  --font-weight-h2: 600;
+  --font-size-h3: 24px;
+  --font-weight-h3: 600;
+  --font-size-h4: 20px;
+  --font-weight-h4: 600;
+  --font-size-h5: 18px;
+  --font-weight-h5: 700;
+  --font-size-h6: 18px;
+  --font-weight-h6: 400;
+  --line-height-heading: 1.25;
+
+  /* Other Elements */
+  --font-size-code: 14px;
+}
+
+/*
+ * ===================================================================
+ *  COLOR PALETTES (Light & Dark)
+ * ===================================================================
+ */
+
+/*
+ * LIGHT THEME (Sepia / Parchment)
+ * A warm, off-white page on a dark, textured canvas.
+ */
+.theme-sepia-light {
+  /* Core Palette */
+  --canvas-color: #212121;
+  --page-background-color: #F5F3F0;
+  --text-color-main: #3D3A37;
+  --text-color-secondary: #6B6864;
+
+  /* General Text & Placeholders */
+  color: var(--text-color-main);
+  --placeholder-color: var(--text-color-secondary);
+  --paragraph-color: var(--text-color-main);
+  --heading-color: var(--text-color-main);
+  --listitem-color: var(--text-color-main);
+  --quote-color: var(--text-color-main);
+  --divider-color: #c0a0624d;
+  
+  /* UI Controls & Toolbars */
+  --toolbar-border-color: rgba(61, 58, 55, 0.15);
+  --toolbar-shadow: rgba(0, 0, 0, 0.1);
+  --controls-background-color: rgba(61, 58, 55, 0.05);
+  --controls-background-color-hover: rgba(61, 58, 55, 0.1);
+  --controls-background-color-selected: var(--accent-color);
+  --controls-color: var(--text-color-main);
+  --controls-color-secondary: var(--text-color-secondary);
+  --tooltips-border-color: rgba(61, 58, 55, 0.15);
+  --scrollbar-thumb-color: #D9D9D9;
+  --scrollbar-track-color: var(--page-background-color);
+
+  /* Blocks (Code, Callout) */
+  --code-background-color: rgba(61, 58, 55, 0.07);
+  --code-color: #B4533C;
+  --callout-background-color: rgba(61, 58, 55, 0.05);
+
+  /* Buttons */
+  --button-background-color: var(--accent-color);
+  --button-color: var(--page-background-color);
+  --button-background-color-hover: var(--accent-color-hover);
+  --button-color-hover: var(--page-background-color);
+  --button-border-color: transparent;
+
+  /* Table Styles */
+  --table-border-color: rgba(61, 58, 55, 0.3);
+  --table-header-cell-border-color: rgba(61, 58, 55, 0.3);
+  --table-cell-background-color: transparent;
+  --table-selection-color: rgba(161, 128, 66, 0.2);
+  --table-selection-color-header: rgba(161, 128, 66, 0.15);
+  
+  /* Background Colors for Blocks (Muted, Earthy Tones) */
+  --bg-color-default: transparent;
+  --bg-color-gray: #EAE8E4;
+  --bg-color-brown: #EAE1DC;
+  --bg-color-orange: #F3E6D8;
+  --bg-color-yellow: #F4ECDA;
+  --bg-color-green: #DDEBE4;
+  --bg-color-blue: #D9E8F0;
+  --bg-color-purple: #E8E3ED;
+  --bg-color-red: #F2E4E4;
+}
+
+/*
+ * DARK THEME (Sepia / Parchment)
+ * A light, parchment-colored text on a dark, warm-gray page.
+ */
+.theme-sepia-dark {
+  /* Core Palette */
+  --canvas-color: #1A1918;
+  --page-background-color: #2A2826;
+  --text-color-main: #DCD8D1;
+  --text-color-secondary: #8A857D;
+
+  /* General Text & Placeholders */
+  color: var(--text-color-main);
+  --placeholder-color: var(--text-color-secondary);
+  --paragraph-color: var(--text-color-main);
+  --heading-color: var(--text-color-main);
+  --listitem-color: var(--text-color-main);
+  --quote-color: var(--text-color-main);
+  --divider-color: rgba(220, 216, 209, 0.2);
+  
+  /* UI Controls & Toolbars */
+  --toolbar-border-color: #3a3835;
+  --toolbar-shadow: rgba(0, 0, 0, 0.2);
+  --controls-background-color: rgba(220, 216, 209, 0.07);
+  --controls-background-color-hover: rgba(220, 216, 209, 0.12);
+  --controls-background-color-selected: var(--accent-color);
+  --controls-color: var(--text-color-main);
+  --controls-color-secondary: var(--text-color-secondary);
+  --tooltips-border-color: #3a3835;
+  --scrollbar-thumb-color: #555350;
+  --scrollbar-track-color: var(--page-background-color);
+
+  /* Blocks (Code, Callout) */
+  --code-background-color: rgba(220, 216, 209, 0.07);
+  --code-color: #D98570;
+  --callout-background-color: rgba(220, 216, 209, 0.05);
+
+  /* Buttons */
+  --button-background-color: var(--accent-color);
+  --button-color: #2A2826;
+  --button-background-color-hover: var(--accent-color-hover);
+  --button-color-hover: #2A2826;
+  --button-border-color: transparent;
+
+  /* Table Styles */
+  --table-border-color: rgba(220, 216, 209, 0.3);
+  --table-header-cell-border-color: rgba(220, 216, 209, 0.3);
+  --table-cell-background-color: transparent;
+  --table-selection-color: rgba(161, 128, 66, 0.25);
+  --table-selection-color-header: rgba(161, 128, 66, 0.2);
+  
+  /* Background Colors for Blocks (Dark, Muted Tones) */
+  --bg-color-default: var(--page-background-color);
+  --bg-color-gray: #393734;
+  --bg-color-brown: #4a3c35;
+  --bg-color-orange: #574130;
+  --bg-color-yellow: #544a34;
+  --bg-color-green: #30443a;
+  --bg-color-blue: #2c4250;
+  --bg-color-purple: #463a4f;
+  --bg-color-red: #523939;
+}
+
+
+/*
+ * ===================================================================
+ *  EDITOR COMPONENT STYLES - (Now fully dynamic)
+ * ===================================================================
+ */
+
 .editor {
   position: relative;
+  background-color: var(--page-background-color);
 }
 
 .editor [contenteditable="true"] {
@@ -9,6 +195,10 @@
 .placeholder {
   position: absolute !important;
   top: 0;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-serif);
   z-index: -1;
 }
 
@@ -18,93 +208,94 @@
 }
 
 .paragraph {
-  padding-top: 10px;
+  padding-top: 28px;
   margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  font-family: system-ui;
-  /* color: #ffffffcf; */
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-serif);
+  color: var(--paragraph-color);
   position: relative;
 }
 
 strong {
-  font-family: system-ui;
+  font-family: var(--font-family-serif);
   font-weight: 700;
 }
 
 .h1,
 .h2,
 .h3 {
-  line-height: 1.3;
-  font-family: system-ui;
-  font-weight: 700;
+  line-height: var(--line-height-heading);
+  font-family: var(--font-family-serif);
   position: relative;
-  /* color: #ffffffcf; */
+  color: var(--heading-color);
+  margin-bottom: 0;
 }
 
 .h1 {
-  font-size: 31.25px;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-h1);
   margin-top: 25px;
-  margin-bottom: 0;
 }
 
 .h2 {
-  font-size: 24px;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
   margin-top: 20px;
-  margin-bottom: 0;
 }
 
 .h3 {
-  font-size: 20px;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h3);
   margin-top: 20px;
-  margin-bottom: 0;
 }
 
 .h4,
 .h5,
 .h6 {
+  font-family: var(--font-family-serif);
+  line-height: var(--line-height-heading);
+  color: var(--heading-color);
   margin-top: 20px;
   margin-bottom: 0;
 }
 
 .h4 {
-  font-size: 19px;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-h4);
 }
 
 .h5 {
-  font-size: 18px;
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-h5);
 }
 
 .h6 {
-  font-size: 17px;
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-h6);
+  font-style: italic;
+  color: var(--text-color-secondary);
 }
 
-.ol {
+.ol,.ul {
   margin: 0;
-  font-size: 16px;
   padding-top: 18px;
-  font-weight: 400;
-  line-height: 1.5;
   padding-left: 6px;
   text-align: start;
 }
-.ul {
-  margin: 0;
-  font-size: 16px;
-  padding-top: 10px;
-  font-weight: 400;
-  line-height: 1.5;
-  padding-left: 6px;
-}
+
 .listitem {
-  font-size: 16px;
-  font-family: system-ui;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-serif);
   margin-left: 16px;
   margin-top: 4px;
-  /* color: #ffffffcf; */
+  color: var(--listitem-color);
 }
 .listitem::marker {
+  color: var(--accent-color);
   padding-right: 14px;
   padding-left: 6px;
 }
@@ -128,13 +319,14 @@ strong {
 }
 
 .quote {
-  /* color: #ffffffcf; */
-  /* border-left-color: #ffffffcf; */
+  color: var(--quote-color);
+  border-left-color: var(--accent-color);
   border-left-width: 3px;
   border-left-style: solid;
-  font-size: 0.96875rem;
-  line-height: 1.625rem;
-  letter-spacing: -0.00625rem;
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   padding-left: 14px;
   margin: 10px 0 10px 0;
 }
@@ -142,7 +334,8 @@ strong {
 .editor hr {
   margin-top: 24px;
   margin-bottom: 16px;
-  /* border-color: var(--toolbar-border, #292929); */
+  border: none;
+  border-top: 2px solid var(--divider-color);
 }
 
 .text-underline {
@@ -150,6 +343,8 @@ strong {
 }
 .text-italic {
   font-style: italic;
+  color: var(--text-color-secondary);
+  font-family: var(--font-family-serif);
 }
 
 .text-strikethrough {
@@ -163,9 +358,9 @@ strong {
 .text-code {
   font-family: monospace;
   line-height: normal;
-  /* background: rgba(135, 131, 120, 0.15); */
-  /* color: #eb5757; */
+  background: var(--code-background-color);
+  color: var(--code-color);
   border-radius: 4px;
-  font-size: 85%;
+  font-size: var(--font-size-code);
   padding: 0.2em 0.4em;
 }
