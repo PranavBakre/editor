@@ -1,4 +1,4 @@
-import {WebsocketProvider} from 'y-websocket';
+import { WebsocketProvider } from "y-websocket";
 import { Doc } from "@repo/editor/features/collaboration/index";
 
 export function createWebsocketProvider(
@@ -7,9 +7,14 @@ export function createWebsocketProvider(
 ) {
   const doc = getDocFromMap(id, yjsDocMap);
 
-  const provider = new WebsocketProvider(import.meta.env.VITE_API_WS_URL, id, doc, {
-    connect: false,
-  });
+  const provider = new WebsocketProvider(
+    import.meta.env.VITE_API_WS_URL,
+    id,
+    doc,
+    {
+      connect: false,
+    },
+  );
 
   return provider;
 }

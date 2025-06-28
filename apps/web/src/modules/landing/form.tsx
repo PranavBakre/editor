@@ -22,17 +22,18 @@ export function LandingPageForm() {
     }
     setError("");
     const docName = docNameOrId.trim();
-    let docSlug = docName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+    let docSlug = docName
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "");
 
-    if(view !== "create" && docName.includes("/")){
+    if (view !== "create" && docName.includes("/")) {
       const url = new URL(docName);
-      const pathParts = url.pathname.split('/').filter(part => part);
+      const pathParts = url.pathname.split("/").filter((part) => part);
       docSlug = pathParts[pathParts.length - 1] || docSlug;
     }
-    localStorage.setItem("EDITOR_USER_NAME", userName)
-    navigate(
-      `/room/${encodeURIComponent(docSlug)}`
-    );
+    localStorage.setItem("EDITOR_USER_NAME", userName);
+    navigate(`/room/${encodeURIComponent(docSlug)}`);
   };
   return (
     <Card className="border-none max-w-md w-full mx-auto p-8 space-y-6 bg-surface-dark shadow-black/30 shadow-2xl">
@@ -67,7 +68,7 @@ export function LandingPageForm() {
             htmlFor="docName"
             className="block text-sm font-medium text-stone-300 mb-1"
           >
-            {view==="create" ? "Document Name": "Document ID or URL"}
+            {view === "create" ? "Document Name" : "Document ID or URL"}
           </Label>
           <Input
             id="docNameOrId"

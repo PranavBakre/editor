@@ -3,12 +3,14 @@
 This is the web frontend for the collaborative editor, built with React 19, Vite, and TypeScript. It integrates the collaborative editor from `@repo/editor` and supports real-time editing via Yjs.
 
 ## Features
+
 - React 19 + Vite + TypeScript
 - Uses `@repo/editor` for collaborative editing
 - Real-time sync via Yjs
 - ESLint, Prettier, and TypeScript for quality
 
 ## Scripts
+
 - `pnpm dev` — start local dev server
 - `pnpm build` — build for production
 - `pnpm lint` — run ESLint
@@ -17,6 +19,7 @@ This is the web frontend for the collaborative editor, built with React 19, Vite
 - `pnpm cf-typegen` — generate/sync types from wrangler config
 
 ## Development
+
 1. Install dependencies:
    ```sh
    pnpm install
@@ -27,6 +30,7 @@ This is the web frontend for the collaborative editor, built with React 19, Vite
    ```
 
 ## Build & Deploy
+
 - **Build:**
   ```sh
   pnpm build
@@ -41,12 +45,15 @@ This is the web frontend for the collaborative editor, built with React 19, Vite
   ```
 
 ## Type Generation
+
 To generate or sync Cloudflare Worker types:
+
 ```sh
 pnpm cf-typegen
 ```
 
 ## Tech Stack
+
 - React 19, Vite, TypeScript
 - Uses `@repo/editor` for collaborative editing
 - Yjs for real-time sync

@@ -5,7 +5,13 @@ import { type InitialEditorStateType } from "@lexical/react/LexicalComposer";
 export { Doc } from "yjs";
 
 export const CollaborationPlugin = withFeature("collaboration")(
-  function CollaborationPlugin({ feature, initialState }: { feature: NonNullable<FeatureContextType["collaboration"]>; initialState?: InitialEditorStateType }) {
+  function CollaborationPlugin({
+    feature,
+    initialState,
+  }: {
+    feature: NonNullable<FeatureContextType["collaboration"]>;
+    initialState?: InitialEditorStateType;
+  }) {
     return (
       <LexicalCollaborationPlugin
         providerFactory={feature.providerFactory}
@@ -15,5 +21,5 @@ export const CollaborationPlugin = withFeature("collaboration")(
         initialEditorState={initialState}
       />
     );
-  }
+  },
 );

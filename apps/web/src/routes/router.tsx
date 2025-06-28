@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
       {
         path: "/room/:roomId",
         element: <Room />,
-      }
+      },
     ],
   },
 ]);

@@ -36,31 +36,38 @@ editor/
 ## Apps
 
 ### `apps/web`
+
 - React 19 + Vite frontend
 - Uses collaborative editor from `@repo/editor`
 - See [`apps/web/README.md`](./apps/web/README.md)
 
 ### `apps/backend`
+
 - Cloudflare Worker backend (Hono, Yjs, y-durableobjects)
 - See [`apps/backend/README.md`](./apps/backend/README.md)
 
 ## Packages
 
 ### `packages/editor`
+
 - Collaborative rich-text editor React component (Lexical, Yjs)
 - See [`packages/editor/README.md`](./packages/editor/README.md)
 
 ### `packages/eslint-config`
+
 - Shared ESLint config
 
 ### `packages/typescript-config`
+
 - Shared TypeScript config
 
 ## Tooling
+
 - **Turbo**: Fast monorepo builds
 - **pnpm**: Workspaces and dependency management
 - **ESLint**/**Prettier**/**TypeScript**: Quality and consistency
 
 ## Requirements
+
 - Node.js >= 18
 - pnpm >= 7

@@ -18,10 +18,9 @@ app.get("/room/:roomId", upgrade(), async (c) => {
 
   const res = await client.rooms[":roomId"].$get(
     { param: { roomId: c.req.param("roomId") } },
-    { init: { headers: c.req.raw.headers } }
+    { init: { headers: c.req.raw.headers } },
   );
 
- 
   return new Response(null, {
     webSocket: res.webSocket,
     status: res.status,

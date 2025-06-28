@@ -1,7 +1,7 @@
 import { Editor, type EditorProps } from "@repo/editor/editor";
 import { theme } from "@repo/editor/theme/default";
 
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { createWebsocketProvider } from "./provider";
 import "@repo/editor/theme/default.css";
@@ -32,7 +32,9 @@ export default function Room() {
   return (
     <div className="min-h-screen w-screen flex flex-col lg:px-40 lg:pt-24">
       <Editor
-        onError={(e) => {console.log(e)}}
+        onError={(e) => {
+          console.log(e);
+        }}
         editable={true}
         editorClasses={theme}
         colorScheme="theme-sepia-light"

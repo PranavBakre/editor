@@ -7,6 +7,7 @@ trigger: always_on
 ## 1. Frontend (`apps/web`)
 
 - **Root Structure**
+
   - `README.md`: Documentation for the frontend application.
   - `package.json`: Project dependencies and scripts.
   - `tsconfig*.json`: TypeScript configuration files.
@@ -17,6 +18,7 @@ trigger: always_on
   - `src/`: Main source code for the frontend.
 
 - **`src/` Directory**
+
   - Contains all application source code, including:
     - `modules/`: Feature modules (e.g., room, user, etc.).
     - `routes/`: Route definitions (e.g., `index.tsx`).
@@ -34,6 +36,7 @@ trigger: always_on
 ## 2. Backend (`apps/backend`)
 
 - **Root Structure**
+
   - `README.md`: Documentation for the backend application.
   - `package.json`: Backend dependencies and scripts.
   - `tsconfig.json`: TypeScript configuration.
@@ -41,6 +44,7 @@ trigger: always_on
   - `src/`: Main backend source code.
 
 - **`src/` Directory**
+
   - Contains all backend logic, such as:
     - `index.ts` or similar entry point.
     - API route handlers, controllers, services, and models.

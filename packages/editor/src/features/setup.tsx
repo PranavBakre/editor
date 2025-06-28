@@ -19,8 +19,16 @@ export type FeatureKey = keyof FeatureContextType;
 
 export const FeatureContext = createContext<FeatureContextType | null>(null);
 
-export const FeatureProvider = ({ children, value }: { children: ReactNode; value: FeatureContextType }) => {
-  return <FeatureContext.Provider value={value}>{children}</FeatureContext.Provider>;
+export const FeatureProvider = ({
+  children,
+  value,
+}: {
+  children: ReactNode;
+  value: FeatureContextType;
+}) => {
+  return (
+    <FeatureContext.Provider value={value}>{children}</FeatureContext.Provider>
+  );
 };
 
 export const useFeature = () => {
@@ -36,7 +44,7 @@ export const withFeature =
   <Props extends Record<string, any>>(
     WrappedComponent: React.ComponentType<
       Props & { feature: NonNullable<FeatureContextType[K]> }
-    >
+    >,
   ) => {
     return function WithFeature(props: Omit<Props, "feature">) {
       const feature = useFeature();
