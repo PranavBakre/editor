@@ -290,6 +290,7 @@ strong {
   padding-top: 18px;
   padding-left: 6px;
   text-align: start;
+  list-style: auto;
 }
 
 .listitem {
@@ -310,9 +311,7 @@ strong {
 .li:not(:last-of-type) {
   padding-top: 16px;
 }
-.nestedlistitem {
-  list-style-type: none;
-}
+
 
 .nestedlistitem ul,
 .nestedlistitem ol {
