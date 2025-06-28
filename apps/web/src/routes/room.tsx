@@ -40,7 +40,7 @@ export default function Room() {
         colorScheme="theme-sepia-light"
         placeholder={<div>Enter text</div>}
         features={features}
-        className="lg:w-3xl bg-white lg:rounded-t-lg mx-auto text-black p-5 lg:p-20"
+        className="lg:w-3xl bg-white lg:rounded-t-lg md:mx-auto text-black p-5 lg:p-20"
       />
     </div>
   );
