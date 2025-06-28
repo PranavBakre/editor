@@ -18,6 +18,7 @@ import { InternalNodes } from "./nodes/internal";
 import { CollaborationPlugin } from "./features/collaboration";
 import { type FeatureContextType, FeatureProvider } from "./features/setup";
 import { type ColorScheme, ColorSchemeProvider } from "./theme/provider";
+import MarkdownPlugin from "./plugins/markdown-shortcuts";
 
 export interface EditorProps {
   initialState?: InitialEditorStateType;
@@ -81,6 +82,7 @@ export const Editor = ({
             <MarkdownShortcutPlugin />
             <CollaborationPlugin initialState={initialState} />
             {onChange && <OnChangePlugin onChange={onChange} />}
+            <MarkdownPlugin />
           </LexicalComposer>
         </div>
       </FeatureProvider>
