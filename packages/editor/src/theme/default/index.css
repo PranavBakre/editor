@@ -1,3 +1,4 @@
+@import "../../plugins/text-formatting-toolbar/component.css";
 /*
  * ===================================================================
  *  THEME DEFINITIONS
@@ -12,7 +13,7 @@
  .theme-base {
   /* --- Core Fonts --- */
   --font-family-serif: 'Lora', 'Georgia', serif;
-  --font-family-sans: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-family-sans: 'Poppins', 'Inter', 'Helvetica Neue', sans-serif;
 
   /* --- Core Brand Colors (consistent across themes) --- */
   --accent-color: #A18042;
@@ -369,4 +370,26 @@ strong {
   border-radius: 4px;
   font-size: var(--font-size-code);
   padding: 0.2em 0.4em;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-subscript {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+.text-superscript {
+    vertical-align: super;
+    font-size: smaller;
 }

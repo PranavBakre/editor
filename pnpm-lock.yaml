@@ -152,6 +152,9 @@ importers:
       '@lexical/rich-text':
         specifier: ^0.32.1
         version: 0.32.1
+      '@lexical/selection':
+        specifier: ^0.32.1
+        version: 0.32.1
       '@lexical/table':
         specifier: ^0.32.1
         version: 0.32.1
@@ -185,6 +188,9 @@ importers:
       lexical:
         specifier: ^0.32.1
         version: 0.32.1
+      lucide-react:
+        specifier: ^0.523.0
+        version: 0.523.0(react@19.1.0)
       typescript:
         specifier: 5.8.2
         version: 5.8.2

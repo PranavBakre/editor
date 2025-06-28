@@ -13,12 +13,13 @@ import {
   type EditorThemeClasses,
   type LexicalEditor,
 } from "lexical";
-import { type ReactElement, type ReactNode, useMemo } from "react";
+import { type ReactElement, type ReactNode, useMemo, useState } from "react";
 import { InternalNodes } from "./nodes/internal";
 import { CollaborationPlugin } from "./features/collaboration";
 import { type FeatureContextType, FeatureProvider } from "./features/setup";
 import { type ColorScheme, ColorSchemeProvider } from "./theme/provider";
 import MarkdownPlugin from "./plugins/markdown-shortcuts";
+import { TextFormattingToolbarPlugin } from "./plugins/text-formatting-toolbar";
 
 export interface EditorProps {
   initialState?: InitialEditorStateType;
@@ -58,10 +59,18 @@ export const Editor = ({
     };
   }, [onError, editable]);
 
+  const [container, setContainer] = useState<HTMLDivElement | null>(null);
+
+  const onRef = (_container: HTMLDivElement) => {
+    if (_container !== null) {
+      setContainer(_container);
+    }
+  };
+
   return (
     <ColorSchemeProvider colorScheme={colorScheme}>
       <FeatureProvider value={features}>
-        <div className={`editor theme-base ${colorScheme} ${className ?? ""}`}>
+        <div className={`editor theme-base ${colorScheme} ${className ?? ""}`} ref={onRef}>
           <LexicalComposer initialConfig={initialConfig}>
             <RichTextPlugin
               ErrorBoundary={LexicalErrorBoundary}
@@ -83,6 +92,7 @@ export const Editor = ({
             <CollaborationPlugin initialState={initialState} />
             {onChange && <OnChangePlugin onChange={onChange} />}
             <MarkdownPlugin />
+            <TextFormattingToolbarPlugin anchor={container} />
           </LexicalComposer>
         </div>
       </FeatureProvider>

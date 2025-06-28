@@ -29,5 +29,10 @@ export const theme: EditorThemeClasses = {
     bold: "text-bold",
     italic: "text-italic",
     underlineStrikethrough: "text-underlineStrikethrough",
+    capitalize: "text-capitalize",
+    lowercase: "text-lowercase",
+    uppercase: "text-uppercase",
+    subscript: "text-subscript",
+    superscript: "text-superscript",
   },
 };
