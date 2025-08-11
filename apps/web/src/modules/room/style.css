@@ -1,7 +1,6 @@
 .editor {
     min-height: 100%;
     flex: 1;
-    background: url(/background.svg);
-    /* background-color: white; */
+    background-color: white;
     text-shadow: 1px 1px 2px var(--text-shadow-color);
 }

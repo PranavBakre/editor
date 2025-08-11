@@ -1,0 +1,1 @@
+export const EDITOR_DATA_NODE_ATTRIBUTE = "data-pb-editor-node"

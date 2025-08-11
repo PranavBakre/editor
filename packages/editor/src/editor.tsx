@@ -20,6 +20,7 @@ import { type FeatureContextType, FeatureProvider } from "./features/setup";
 import { type ColorScheme, ColorSchemeProvider } from "./theme/provider";
 import MarkdownPlugin from "./plugins/markdown-shortcuts";
 import { TextFormattingToolbarPlugin } from "./plugins/text-formatting-toolbar";
+import { CalloutNodes, CalloutPlugin } from "./nodes/callout";
 
 export interface EditorProps {
   initialState?: InitialEditorStateType;
@@ -54,7 +55,7 @@ export const Editor = ({
       editable,
       onError,
       theme,
-      nodes: InternalNodes,
+      nodes: [...InternalNodes, ...CalloutNodes],
       editorState: null,
     };
   }, [onError, editable]);
@@ -93,6 +94,7 @@ export const Editor = ({
             {onChange && <OnChangePlugin onChange={onChange} />}
             <MarkdownPlugin />
             <TextFormattingToolbarPlugin anchor={container} />
+            <CalloutPlugin />
           </LexicalComposer>
         </div>
       </FeatureProvider>

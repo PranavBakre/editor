@@ -14,6 +14,7 @@ import {
   setFloatingElemPosition,
 } from "../../utils/dom";
 import { mergeRegister } from "@lexical/utils";
+import { CREATE_CALLOUT_COMMAND } from "../../nodes/callout";
 
 export interface TextFormatFloatingToolbarProps {
   editor: LexicalEditor;
@@ -307,6 +308,17 @@ export function TextFormatFloatingToolbar({
             }
             title="Insert code block"
             aria-label="Insert code block"
+          >
+            <span>&lt;&gt;</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              editor.dispatchCommand(CREATE_CALLOUT_COMMAND, null);
+            }}
+
+            title="Callout"
+            aria-label="Format text to callout"
           >
             <span>&lt;&gt;</span>
           </button>

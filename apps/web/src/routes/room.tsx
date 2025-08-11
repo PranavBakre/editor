@@ -30,18 +30,21 @@ export default function Room() {
   }, [roomId]);
 
   return (
-    <div className="min-h-screen w-screen flex flex-col lg:px-40 lg:pt-24">
-      <Editor
-        onError={(e) => {
-          console.log(e);
-        }}
-        editable={true}
-        editorClasses={theme}
-        colorScheme="theme-sepia-light"
-        placeholder={<div>Enter text</div>}
-        features={features}
-        className="lg:w-3xl bg-white lg:rounded-t-lg md:mx-auto text-black p-5 lg:p-20"
-      />
+    <div className="min-h-screen w-screen flex flex-col">
+      <div className="w-full h-12 bg-white/5 shadow-lg sticky top-0 z-1 backdrop-blur-sm"></div>
+      <div className="lg:px-40 lg:pt-24 flex-1 flex flex-col">
+        <Editor
+          onError={(e) => {
+            console.log(e);
+          }}
+          editable={true}
+          editorClasses={theme}
+          colorScheme="theme-sepia-light"
+          placeholder={<div>Enter text</div>}
+          features={features}
+          className="lg:w-3xl bg-white lg:rounded-t-lg md:mx-auto text-black p-5 lg:p-20"
+        />
+      </div>
     </div>
   );
 }
